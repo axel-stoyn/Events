@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Basket.DAL.EF;
+using Microsoft.EntityFrameworkCore;
+using Basket.DAL.Entities;
 
 namespace Basket
 {
@@ -28,6 +31,8 @@ namespace Basket
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddDbContext<EventBasketContext>(opt => opt.UseInMemoryDatabase());
+
             services.AddMvc();
         }
 
@@ -36,6 +41,9 @@ namespace Basket
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            var context = app.ApplicationServices.GetService<EventBasketContext>();
+            AddTestData(context);
 
             if (env.IsDevelopment())
             {
@@ -55,6 +63,25 @@ namespace Basket
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
+
+        private static void AddTestData(EventBasketContext context)
+        {
+            var user1 = new User
+            {
+                Id = 1,
+                FirstName = "Slava",
+                LastName = "Vyacheslav",
+                Localization = "RU",
+                Address = "Budennogo",
+                PhoneNamber = "9778602"
+            };
+            context.Users.Add(user1);
+
+            context.SaveChanges();
+        }
+
     }
 }

@@ -1,0 +1,9 @@
+D:\VersionOfControl\Events\Basket\bin\Debug\netcoreapp1.1\Basket.deps.json
+D:\VersionOfControl\Events\Basket\bin\Debug\netcoreapp1.1\Basket.runtimeconfig.json
+D:\VersionOfControl\Events\Basket\bin\Debug\netcoreapp1.1\Basket.runtimeconfig.dev.json
+D:\VersionOfControl\Events\Basket\bin\Debug\netcoreapp1.1\Basket.dll
+D:\VersionOfControl\Events\Basket\bin\Debug\netcoreapp1.1\Basket.pdb
+D:\VersionOfControl\Events\Basket\obj\Debug\netcoreapp1.1\Basket.csprojResolveAssemblyReference.cache
+D:\VersionOfControl\Events\Basket\obj\Debug\netcoreapp1.1\Basket.AssemblyInfo.cs
+D:\VersionOfControl\Events\Basket\obj\Debug\netcoreapp1.1\Basket.dll
+D:\VersionOfControl\Events\Basket\obj\Debug\netcoreapp1.1\Basket.pdb

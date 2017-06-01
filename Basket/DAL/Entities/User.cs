@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Basket.Models
+namespace Basket.DAL.Entities
 {
     public class User
     {
@@ -20,5 +20,14 @@ namespace Basket.Models
 
         [Display(Name = "Phone Namber")]
         public string PhoneNamber { get; set; }
+
+        //Many to many
+        public ICollection<Ticket> Tickets { get; set; }
+        public ICollection<Order> Orders { get; set; }
+        public User()
+        {
+            Tickets = new List<Ticket>();
+            Orders = new List<Order>();
+        }
     }
 }

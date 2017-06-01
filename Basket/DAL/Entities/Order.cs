@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Basket.Models
+namespace Basket.DAL.Entities
 {
     public class Order
     {
@@ -13,5 +13,15 @@ namespace Basket.Models
 
         [Display(Name = "Track No")]
         public string TrackNo { get; set; }
+
+        //Many to many
+        public ICollection<User> Users { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
+
+        public Order()
+        {
+            Users = new List<User>();
+            Tickets = new List<Ticket>();
+        }
     }
 }
