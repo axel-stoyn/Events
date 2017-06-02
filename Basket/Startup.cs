@@ -43,7 +43,7 @@ namespace Basket
             loggerFactory.AddDebug();
 
             var context = app.ApplicationServices.GetService<EventBasketContext>();
-            AddTestData(context);
+            Initialize(context);
 
             if (env.IsDevelopment())
             {

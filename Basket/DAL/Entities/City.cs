@@ -11,7 +11,7 @@ namespace Basket.DAL.Entities
         public string Name { get; set; }
 
         //One to many
-        public int? VenueId { get; set; }
+        public int VenueId { get; set; }
         public Venue Venue { get; set; }
     }
 }

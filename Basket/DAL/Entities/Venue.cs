@@ -13,6 +13,7 @@ namespace Basket.DAL.Entities
         public string Address { get; set; }
 
         //One to Many
+        public int CityId { get; set; }
         public int? EventId { get; set; }
         public Event Event { get; set; }
 
